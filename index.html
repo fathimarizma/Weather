@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-section">
+          <h1>Weather App</h1>
+          <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+
+        <div class="search-container">
+          <input type="text" id="city-search" placeholder="Enter city name" />
+          <button id="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+          <button id="location-btn">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
+        </div>
+
+        <div class="unit-toggle">
+          <button id="celsius-btn" class="active">°C</button>
+          <button id="fahrenheit-btn">°F</button>
+        </div>
+
+      </header>
+	  
+      <main class="weather-container">
+        <section class="current-weather">
+          <h2 id="city-name"></h2>
+          <p id="weather-description"></p>
+          <div class="weather-details-container">
+            <div class="weather-info">
+              <img id="weather-icon" src="" alt="Weather Icon" />
+              <p id="temperature"></p>
+              <span class="unit">°C</span>
+            </div>
+            <div class="weather-details">
+              <p>
+                Feels like: <span id="feels-like"></span
+                ><span class="unit">°C</span>
+              </p>
+              <p>Humidity: <span id="humidity"></span>%</p>
+              <p>
+                Wind speed: <span id="wind-speed"></span>
+                <span class="wind-unit">km/h</span>
+              </p>
+              <p>Pressure: <span id="pressure"></span> mb</p>
+              <p>Visibility: <span id="visibility"></span> km</p>
+              <p>Rain: <span id="rain"></span> mm</p>
+            </div>
+          </div>
+        </section>
+        <div class="weather-container-second">
+          <section id="air-quality"></section>
+          <section class="forecast">
+            <h2>3-Day Forecast</h2>
+            <div class="forecast-container"></div>
+          </section>
+        </div>
+      </main>
+      <section class="historical">
+        <h2>Historical Data (Last 7 Days)</h2>
+        <div class="historical-container"></div>
+      </section>
+      <section class="map">
+        <h2>Weather Map</h2>
+        <div id="map"></div>
+      </section>
+      <p class="powered-by">
+        Powered by
+        <a href="https://www.weatherapi.com/" target="_blank">Weather API</a>
+      </p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
